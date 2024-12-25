@@ -2,7 +2,7 @@ const input1 = document.getElementById("task-input");
 const add = document.getElementById("add-task-btn");
 const list = document.getElementById("task-list");
 
-const api = "https://676bd6f7bc36a202bb85e300.mockapi.io/tasks";  
+const api = "https://676bd6f7bc36a202bb85e300.mockapi.io/tasks";
 
 function fetchTasks() {
   fetch(api)
@@ -46,7 +46,9 @@ function renderTasks(tasks) {
 
 function addTask() {
   const taskName = input1.value.trim();
-
+  if (!taskName) {
+    return alert("Enter a task");
+  }
   const timestamp = new Date().toLocaleString();
   const newTask = { name: taskName, added: timestamp, edited: null };
 
@@ -70,7 +72,7 @@ function editTask(task) {
     return;
   }
 
-  const  newedit = {
+  const newedit = {
     ...task,
     name: edited1.trim(),
     edited: new Date().toLocaleString(),
