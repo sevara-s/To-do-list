@@ -1,0 +1,17 @@
+.description1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: blueviolet;
+}
+.description{
+    margin: 0 auto;
+}
+.top_part{
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+
+}
